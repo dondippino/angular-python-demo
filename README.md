@@ -2,12 +2,20 @@
 # Architecture / Design
 This project is a very minimal demo, using Angular(frontend), Python(Flask) on the backend and docker. ```docker-compose```is used for the overall deployment of the application. The user interface is built on Angular Material,while also Tailwind CSS was used for easy styling.
 
+
 ## Backend (Flask, Flask-Restful & Docker) ##
 The entire setup of the backend is handled by docker
 The ```Dockerfile``` in the root of the backend project, is setup to automate the deployment of the backend, also to scale the backend (if needed) 
 
+### List of Endpoints ### 
+1. Login: **POST /**
+2. Get Transactions: **GET /**
+3. Cancel Transaction: **PUT /**
+
+Cancelled transactions are written to file named ****'canceled_transactions.txt'**** in tge root of the backend project
+
 ## Frontend (Angular) ##
-The frontend has mainly 2 pagess: Login page and Transactions page. Services in Angular were also implemented as all api calls are wrapped in services.
+The frontend has mainly 2 pages: Login page and Transactions page. Services in Angular were also implemented as all api calls are wrapped in services.
 
 # How to install
 1. Run the following command in CMD (Windows) or Terminal (Mac & Linux)
