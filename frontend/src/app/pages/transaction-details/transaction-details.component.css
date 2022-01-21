@@ -1,0 +1,9 @@
+.success .mat-chip-selected {
+  background-color: #00B300 !important;
+  color: #fff;
+}
+
+table thead tr th{
+  background-color: #000 !important;
+  color: #fff;
+}

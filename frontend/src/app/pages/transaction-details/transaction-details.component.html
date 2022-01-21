@@ -1,0 +1,94 @@
+<div class="flex w-full">
+  <div class="ml-auto">
+    <button (click)="logOut()" class="" mat-button color="warn">Logout</button>
+  </div>
+</div>
+<div class=" gap-4 flex container xl:px-24 lg:px-24 h-screen bg-slate-100 py-10">
+
+  <div class="flex-auto  my-1 sm:w-full md:w-1/3 xl:w-1/3 lg:w-1/3">
+    <mat-card>
+      <img src={{avatar}} mat-card-avatar>
+      <mat-card-title class="mt-2">{{data?.user.firstName}} {{data?.user.lastName}}</mat-card-title>
+      <mat-card-subtitle>
+        {{data?.user.phoneNumber}}<br />
+        {{data?.user.email}}
+      </mat-card-subtitle>
+      <mat-card-subtitle>
+        <mat-chip-list aria-label="Fish selection" class="success">
+          <ng-template [ngIf]="data?.status === 'Valid'">
+            <mat-chip color="success" selected>{{data?.status}}</mat-chip>
+          </ng-template>
+        </mat-chip-list>
+      </mat-card-subtitle>
+      <mat-divider></mat-divider>
+      <dl class="columns-2 pt-4">
+        <dt class="uppercase">Address</dt>
+        <dd class="uppercase">{{data?.user.address}}</dd>
+        <dt class="uppercase">City</dt>
+        <dd>{{data?.user.city}}</dd>
+        <dt class="uppercase">State Province ID</dt>
+        <dd>{{data?.user.stateProvinceId}}</dd>
+        <dt class="uppercase">Country ID</dt>
+        <dd>{{data?.user.countryId}}</dd>
+        <dt class="uppercase">ZIP Postal Code</dt>
+        <dd>{{data?.user.zipPostalCode}}</dd>
+      </dl>
+
+    </mat-card>
+  </div>
+  <div class="flex-auto  my-1 sm:w-full md:w-2/3 xl:w-2/3 lg:w-2/3">
+    <!-- <mat-card> -->
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 w-full">
+
+      <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+      <!-- Credit card name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell class="text-white bg-black font-bold" *matHeaderCellDef> Credit Card Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.CreditCardName}} </td>
+      </ng-container>
+
+      <!-- Credit Card Number Column -->
+      <ng-container matColumnDef="number">
+        <th mat-header-cell class="text-white bg-black font-bold" *matHeaderCellDef> Credit Card Number </th>
+        <td mat-cell *matCellDef="let element"> {{element.creditCardNumber}} </td>
+      </ng-container>
+
+      <!-- Expiry Date Column -->
+      <ng-container matColumnDef="expiry">
+        <th mat-header-cell class="text-white bg-black font-bold" *matHeaderCellDef> Expiry </th>
+        <td mat-cell *matCellDef="let element"> {{element.creditCardExpireMonth}}/{{element.creditCardExpireYear}} </td>
+      </ng-container>
+
+      <!-- Price Column -->
+      <ng-container matColumnDef="price">
+        <th mat-header-cell class="text-white bg-black font-bold" *matHeaderCellDef> Price </th>
+        <td mat-cell *matCellDef="let element"> {{element.price}} </td>
+      </ng-container>
+
+      <!-- Shipping info Column -->
+      <ng-container matColumnDef="shipping">
+        <th mat-header-cell class="text-white bg-black font-bold" *matHeaderCellDef> Shipping </th>
+        <td mat-cell *matCellDef="let element"> {{element.shippingRateComputationMethodSystemName}}<br /> Option:
+          {{element.shippingOption}} </td>
+      </ng-container>
+
+      <!-- Action Column -->
+      <ng-container matColumnDef="action">
+        <th mat-header-cell class="text-white bg-black font-bold" *matHeaderCellDef> Action </th>
+        <td mat-cell *matCellDef="let element"> <button (click)="cancelTransaction(element)" class="" mat-flat-button
+            color="warn">Cancel</button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row class="text-white bg-black font-bold" *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <!-- </mat-card> -->
+
+
+
+  </div>
+</div>

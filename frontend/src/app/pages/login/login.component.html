@@ -1,0 +1,19 @@
+ <div class="grid grid-cols-1">
+   <div class="w-full h-full flex flex-col items-center">
+     <div
+       class="min-h-screen flex flex-col items-center justify-center lg:w-8/12 md:w-8/12 xs:w-11/12 sm:w-11/12 py-12 px-4 sm:px-6 lg:px-8">
+       <h1>Log In</h1>
+       <form class="">
+         <mat-form-field class="w-full" appearance="fill">
+           <mat-label>Username</mat-label>
+           <input (change)="onChangeUsername($event)" matInput placeholder="Enter Username" value="">
+         </mat-form-field>
+         <mat-form-field class="w-full" appearance="fill">
+           <mat-label>Password</mat-label>
+           <input (change)="onChangePassword($event)" matInput type="password" placeholder="Enter Password" value="">
+         </mat-form-field>
+         <button (click)="onSubmit()" type="button" mat-flat-button color="primary" class="w-full">{{loginLabel}}</button>
+       </form>
+     </div>
+   </div>
+ </div>
