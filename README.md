@@ -10,18 +10,20 @@ The ```Dockerfile``` in the root of the backend project, is setup to automate th
 The frontend has mainly 2 pagess: Login page and Transactions page. Services in Angular were also implemented as all api calls are wrapped in services.
 
 # How to install
-1. Run the following command in CMD(Windows) or Terminal
+1. Run the following command in CMD (Windows) or Terminal (Mac & Linux)
 ```git clone https://github.com/dondippino/angular-python-demo.git```
 2. Go to the cloned directory
 ```cd angular-python-demo```
 3. Run the ```run.sh``` script or use docker-compose directly 
 ```./run.sh``` or ```docker-compose down && docker-compose build && docker-compose up```
-4. Go to the frontend directory
+4. Go to the frontend directory (Open an new terminal)
 ```cd frontend```
-3. Install dependencies
+5. Install dependencies
 ```npm install```
-4. Run the application
+6. Run the application
 ```npm run start```
+7. Visit http://localhost:4200 or http://127.0.0.1:4200 in the browser 
+
 
 # Technology Used
 1. Docker
